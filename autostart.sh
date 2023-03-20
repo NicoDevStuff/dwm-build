@@ -8,6 +8,6 @@ nm-applet &
 volumeicon &
 easyeffects &
 xclip &
-# ~/.config/polybar/launch_polybar.sh &
+dwmblocks &
 conky --config ~/.config/conky/leftwm/conky.conf & 
 nitrogen --restore &  
