@@ -7,8 +7,13 @@ static const unsigned int snap      = 32;       /* snap pixel */
 static const int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "monospace:size=10" };
-static const char dmenufont[]       = "monospace:size=10";
+static const char *fonts[]          = {
+										"JetBrains Mono:size=13",
+										"Material Icons:size=13",
+										"JoyPixels:style=Regular:size=13"
+										/* "monospace:size=10" */
+									};
+static const char dmenufont[]       = "JetBrains Mono:size=13";
 static unsigned int baralpha        = 0xd0;
 static unsigned int borderalpha     = OPAQUE;
 static const char col_gray1[]       = "#222222";
