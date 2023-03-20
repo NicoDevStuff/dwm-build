@@ -9,5 +9,5 @@ volumeicon &
 easyeffects &
 xclip &
 dwmblocks &
-conky --config ~/.config/conky/leftwm/conky.conf & 
+conky --config ~/.config/conky/dwm/conky.conf & 
 nitrogen --restore &  
