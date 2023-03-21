@@ -825,7 +825,7 @@ drawbar(Monitor *m)
 		return;
 
 	/* draw status first so it can be overdrawn by tags later */
-	if (m == selmon) { /* status is only drawn on selected monitor */
+	if (m == selmon || 1) { /* status is only drawn on selected monitor */
 		drw_setscheme(drw, scheme[SchemeNorm]);
 		tw = TEXTW(stext) - lrpad + 2; /* 2px right padding */
 		drw_text(drw, m->ww - tw, 0, tw, bh, 0, stext, 0);
@@ -1433,14 +1433,14 @@ resizeclient(Client *c, int x, int y, int w, int h)
 		gapincr = gapoffset = 0;
 	} else {
 		/* Remove border and gap if layout is monocle or only one client */
-		if (c->mon->lt[c->mon->sellt]->arrange == monocle || n == 1) {
-			gapoffset = 0;
-			gapincr = -2 * borderpx;
-			wc.border_width = 0;
-		} else {
+		/* if (c->mon->lt[c->mon->sellt]->arrange == monocle || n == 1) { */
+		/* 	gapoffset = 0; */
+		/* 	gapincr = -2 * borderpx; */
+		/* 	wc.border_width = 0; */
+		/* } else { */
 			gapoffset = gappx;
 			gapincr = 2 * gappx;
-		}
+		/* } */
 	}
 
 	c->oldx = c->x; c->x = wc.x = x + gapoffset;
@@ -2198,9 +2198,12 @@ updatesizehints(Client *c)
 void
 updatestatus(void)
 {
+	Monitor* m;
 	if (!gettextprop(root, XA_WM_NAME, stext, sizeof(stext)))
 		strcpy(stext, "dwm-"VERSION);
-	drawbar(selmon);
+	for(m = mons; m; m = m->next)
+		drawbar(m);
+
 }
 
 void
