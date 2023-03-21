@@ -866,6 +866,13 @@ destroynotify(XEvent *e)
 
 	else if ((c = swallowingclient(ev->window)))
 		unmanage(c->swallowing, 1);
+	
+	else if ((c = wintosystrayicon(ev->window))) {
+		removesystrayicon(c);
+		resizebarwin(selmon);
+		updatesystray();
+	}
+
 }
 
 void
