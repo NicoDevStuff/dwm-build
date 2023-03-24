@@ -77,6 +77,7 @@ static const char *messenger[]  = { "signal-desktop", NULL };
 static const char *browser[]  = { "firefox", NULL };
 static const char *email[]  = { "thunderbird", NULL };
 static const char *filemanager[]  = { "pcmanfm", NULL };
+static const char *networkmanager[]  = { "nm-connection-editor", NULL };
 
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
@@ -87,6 +88,7 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_e, 	   spawn,          {.v = emojipicker} },
 	{ MODKEY|ShiftMask,             XK_s, 	   spawn,          {.v = messenger} },
 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
+	{ MODKEY,                       XK_n,      spawn,          {.v = networkmanager } },
 	{ MODKEY,                       XK_b,      spawn,          {.v = browser } },
 	{ MODKEY,                       XK_e,      spawn,          {.v = email } },
 	{ MODKEY,                       XK_f,      spawn,          {.v = filemanager } },
@@ -124,7 +126,7 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_7,                      6)
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
-	{ MODKEY|ControlMask|ShiftMask, XK_q,      quit,           {1} }, 
+	{ MODKEY|ShiftMask, XK_r,      quit,           {1} }, 
 };
 
 /* button definitions */
