@@ -8,6 +8,7 @@ easyeffects &
 solaar &
 xclip &
 dwmblocks &
+dunst &
 conky --config ~/.config/conky/dwm/conky.conf & 
 nitrogen --restore &  
 
